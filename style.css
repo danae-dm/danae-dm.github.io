@@ -437,6 +437,48 @@ body.page-body {
   margin-top: 1.6rem;
 }
 
+/* =========================
+   Scroll indicator (intro only)
+   ========================= */
+
+.intro-page .scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 36px;
+  height: 36px;
+
+  border: 1.5px solid rgba(239, 237, 227, 0.6);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0.85;
+  animation: float-down 2.4s ease-in-out infinite;
+}
+
+/* Chevron */
+.intro-page .scroll-indicator .chevron {
+  width: 8px;
+  height: 8px;
+
+  border-right: 1.5px solid rgba(239, 237, 227, 0.8);
+  border-bottom: 1.5px solid rgba(239, 237, 227, 0.8);
+
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+
+/* Float animation */
+@keyframes float-down {
+  0%   { transform: translate(-50%, 0); opacity: 0.85; }
+  50%  { transform: translate(-50%, 8px); opacity: 0.5; }
+  100% { transform: translate(-50%, 0); opacity: 0.85; }
+}
 
 
 /* =========================
