@@ -3,35 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <title>DANAE Experiment</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="intro-page">
 
-  <header>
-    <h1>DANAE</h1>
-    <p>Direct dArk matter search using DEPFET with repetitive-Non-destructive-readout Application Experiment</p>
-  </header>
+  <div class="scroll-section">
 
-  <main>
+    <!-- INTRO / LANDING PANEL -->
+    <header class="intro">
 
+      <!-- TOP NAV (intro only) -->
+      <nav class="top-nav">
+        <ul>
+          <li><a href="setup.html">Experimental Setup</a></li>
+          <li><a href="apantias.html">Apantias</a></li>
+          <li><a href="simulation.html">Simulation</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+
+      <div class="intro-content">
+        <div class="intro-identity">
+          <h1 class="title-line">
+            <span class="title-text">DANAE</span>
+            <span class="title-rule"></span>
+          </h1>
+
+          <h2 class="subtitle">
+            <span class="line-1">
+              Direct dArk matter search using DEPFET with repetitive
+            </span>
+            <span class="line-2">
+              Non-destructive-readout Application Experiment
+            </span>
+          </h2>
+
+        </div>
+
+
+        <div class="intro-description">
+          <p class="lead">
+            DANAE is a direct detection experiment, currently under development.
+            The DANAE experiment was designed in collaboration with the HLL
+            (semiconductor Laboratory of the Max Planck Society) and uses special, low-noise
+            silicon detectors with single-electron resolution to study the scattering
+            of dark matter particles off valence-band electrons in the semiconductor.
+          </p>
+        </div>
+      </div>
+
+    </header>
+
+    <div class="intro-spacer"></div>
+
+    <!-- SUMMARY / CONTENT PANEL -->
+    <main class="summary">
+
+            <nav class="side-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="setup.html">Experimental Setup</a></li>
+          <li><a href="apantias.html">Apantias</a></li>
+          <li><a href="simulation.html">Simulation</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </nav>
+
+<!-- MAIN TEXT -->
+<div class="summary-content two-col">
+
+  <!-- LEFT COLUMN -->
+  <div class="text-col">
     <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet.
+      The goal of the DANAE experiment is the direct detection of dark matter (DM) with particle masses below 1 GeV/c².
+      This so-called light dark matter has gained increasing attention in recent years, driven by theoretical model predictions
+      as well as by the experimental exclusion of higher-mass regions. The DANAE experiment therefore employs special silicon
+      detectors—DEPFETs (Deep p-channel Field Effect Transistors) with repetitive non-destructive readout (RNDR).
     </p>
 
-    <nav>
-      <ul>
-        <li><a href="setup.html">Experimental Setup</a></li>
-        <li><a href="apantias.html">Apantias</a></li>
-        <li><a href="simulation.html">Simulation</a></li>
-        <li><a href="publications.html">Publications</a></li>
-      </ul>
-    </nav>
+    <p>
+      Within an RNDR-DEPFET pixel, the signal charge is repeatedly shifted between two readout nodes and measured until a noise
+      level below 0.2 electrons (e⁻ ENC, equivalent noise charge) is achieved. This enables the detection of single electrons
+      with a significance of five standard deviations. To efficiently suppress background events, the sensors consist of
+      several thousand such pixels and feature readout times below 5 ms per pixel.
+    </p>
 
-  </main>
+    <p>
+      In contrast to other established dark matter experiments, the DANAE experiment investigates the scattering of DM
+      particles off electrons rather than off atomic nuclei. Since significantly less energy is required to excite an
+      electron, this approach allows for enhanced sensitivity to low-mass dark matter.
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN -->
+  <div class="text-col">
+    <p>
+      Astronomical observations constrain the local dark matter density in the solar system, implying that lower-mass DM
+      particles occur more frequently. As a result, only a few kilograms of sensitive detector material are sufficient to
+      explore previously inaccessible mass regions.
+    </p>
+
+    <p>
+      The DANAE project is currently in the phase of technology development and scaling. Using a first prototype detector with
+      a 64 × 64 pixel matrix, the operating principle has been successfully demonstrated. Further optimization of the
+      technology, as well as detailed studies and reduction of background contributions, are required before increasing the
+      sensitive mass and commencing scientific data taking.
+    </p>
+
+    <p>
+      The project is carried out in collaboration with the semiconductor Laboratory of the Max Planck Society (HLL) and the
+      Department of Aerospace Engineering at the University of Applied Sciences Wiener Neustadt (FHWN).
+    </p>
+  </div>
+
+</div>
+
+
+
+    </main>
+
+  </div>
+
+  <!-- LOGO BAR -->
+  <div class="logo-bar">
+    <img src="/images/logo_mbi.png" alt="MBI Logo">
+    <img src="/images/logo_fhwn.png" alt="FHWN Logo">
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
 
 </body>
 </html>

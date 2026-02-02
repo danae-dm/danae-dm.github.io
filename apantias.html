@@ -2,43 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Apantias – DANAE Experiment</title>
+  <title>Apantias – DANAE</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="page-body theme-dark">
 
-  <header>
-    <p>
-      <a href="index.html">← Back to overview</a>
-    </p>
-    <h1>Apantias</h1>
-  </header>
+  <main class="main-content ap-body">
 
-  <main>
+    <!-- BOX 1: Back link (top, flush right) -->
+    <a href="index.html" class="nav-home" aria-label="Back to overview">
+      ← Back to overview
+    </a>
 
-    <section>
-      <h2>Overview</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet.
+
+    <!-- BOX 2–3: Title + subtitle (centered group, flush right) -->
+    <div class="ap-hero">
+      <h1 class="ap-title">APANTIAS</h1>
+      <p class="ap-subtitle">
+        <em>A Python ANalysis Tool for In-depth Sensor Array Statistics</em>
       </p>
-    </section>
+    </div>
 
-    <section>
-      <h2>Source Code</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
-      </p>
-      <p>
-        <a href="https://github.com/danae-dm/apantias" target="_blank">
-          Apantias Github Repo
+    <!-- BOX 4–5: Two-column layout -->
+    <div class="ap-layout">
+
+      <!-- BOX 4: Repo button -->
+      <div class="ap-repo">
+        <a
+          href="https://github.com/danae-dm/apantias"
+          target="_blank"
+          class="button"
+        >
+          Apantias GitHub Repository
         </a>
-      </p>
-    </section>
+      </div>
+
+      <!-- BOX 5: Text block -->
+      <div class="ap-textblock">
+        <p class="ap-text">
+          The Apantias software package performs raw data analysis of a frame-based
+          pixel detector, which provides signals for each of 64×64 pixels (in analogue
+          digital units, ADU) in discrete time steps. Each time step corresponds to one
+          frame and reflects the collection and storage of signal charges within each
+          pixel of the DEPFET detector.
+        </p>
+
+        <p class="ap-text">
+          In these detectors, the signal is cleared during the readout process, which
+          is performed in a rolling shutter mode (with one row of 64 pixels read out in
+          parallel). In the case of RNDR-DEPFETs, each signal is read out multiple times
+          to reduce noise by averaging the readings. The Apantias software supports
+          analysis with both single and multiple repetitions.
+        </p>
+      </div>
+
+    </div>
 
   </main>
 

@@ -3,47 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <title>Experimental Setup – DANAE Experiment</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="page-body theme-light">
 
-  <header>
-    <p>
-      <a href="index.html">← Back to overview</a>
-    </p>
-    <h1>Experimental Setup</h1>
-  </header>
+    <!-- BOX 1: Back link (top, flush right) -->
+    <a href="index.html" class="nav-home" aria-label="Back to overview">
+      ← Back to overview
+    </a>
 
-  <main>
+  <main class="main-content setup-page">
 
-    <section>
-      <h2>Header1</h2>
+    <header class="page-header">
+      <h1>Experimental Setup</h1>
+    </header>
+
+    <nav class="toc">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#location">Location of DANAE</a></li>
+        <li><a href="#rndr">What are RNDR DePFETs?</a></li>
+        <li><a href="#dm-detection">Dark matter detection</a></li>
+        <li><a href="#setup">The setup</a></li>
+      </ul>
+    </nav>
+
+    <section id="location">
+      <h2>Location of DANAE</h2>
+
       <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-        et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-        Lorem ipsum dolor sit amet.
+        The current prototype of DANAE is located in Vienna, Austria, at an altitude of about
+        190 m above sea level, on the ground floor of the laboratory building.
+        The detector is operated inside a vacuum chamber at a pressure of approximately
+        5×10⁻⁶ mbar (5×10⁻⁴ Pa) and is surrounded by thermal shielding.
+      </p>
+
+      <p>
+        The building provides passive shielding: the roof and floors correspond to about
+        1.2 m of concrete. In addition, the vacuum chamber contributes roughly
+        1 cm of stainless steel and the thermal shielding about
+        5 cm of aluminium. These layers are relevant for estimating the expected
+        environmental background.
       </p>
     </section>
 
-    <section>
-      <h2>Header2</h2>
+    <section id="rndr">
+      <h2>What are RNDR DePFETs?</h2>
+
       <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-        et ea rebum.
+        A DePFET (<u>de</u>pleted <u>p</u>-channel <u>f</u>ield-<u>e</u>ffect <u>t</u>ransistor)
+        is a fully depleted silicon pixel sensor with an integrated charge collection and
+        storage node and an in-pixel first-stage amplification. In contrast to CCDs, which
+        transfer charge to a common readout node, a DePFET provides a dedicated readout
+        transistor in each pixel (active pixel concept).
       </p>
+
+      <p>
+        An RNDR-DePFET enables <u>r</u>epetitive <u>n</u>on-<u>d</u>estructive
+        <u>r</u>eadout (RNDR) by moving charge between two internal storage nodes (sub-pixels)
+        using a transfer gate. The collected electrons modulate the channel conductivity and
+        thereby the drain current. Charge can be removed via the clear contact in combination
+        with a clear gate (see Fig. 1).
+      </p>
+
+      <figure>
+        <img src="/images/RNDR-DEPFET.jpg" alt="RNDR-DEPFET schematic" width="400">
+        <figcaption>
+          RNDR-DEPFET schematic: Electrons are collected in the internal gate to modify the
+          conductivity of the transistor channel. An RNDR-DEPFET pixel hosts two sub-pixels
+          to interchange electrons for repetitive readout [1].
+        </figcaption>
+      </figure>
+
+      <p>
+        Charge generated in the depleted silicon bulk drifts towards the internal gates.
+        Using the transfer gate, the charge is first stored in one node, e.g. gate 1 and
+        read out. The charge is then moved to gate 2, and gate 1 is read out again to obtain
+        an updated baseline, which is subtracted from the first measurement. The procedure
+        is repeated analogously for gate 2.
+      </p>
+
+      <p>
+        By moving the same charges back and forth, the signal can be measured N times without
+        destroying the charge. Averaging reduces the readout noise approximately as
+        1/√N, which is reflected by the narrowing of the noise peak in Fig. 2.
+      </p>
+
+      <figure>
+        <img src="/images/250729_NREP.jpg" alt="Noise vs repetition" width="400">
+        <figcaption>
+          The spectrum for different numbers of repetition. The width of the peak becomes
+          smaller for a larger number of repetitions. This leads to better separation between
+          the peaks corresponding to the number of electrons.
+        </figcaption>
+      </figure>
     </section>
 
-    <section>
-      <h2>Header3</h2>
+    <section id="dm-detection">
+      <h2>Dark matter detection</h2>
+
       <p>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-        erat.
+        In direct detection experiments, energy depositions in a target material can be
+        observed via different experimental channels, most commonly scintillation light,
+        phonons (heat), and ionization charge (see Fig. 3). DANAE uses the ionization channel:
+        a dark matter particle may scatter off an electron and transfer enough energy to
+        promote it into the conduction band of silicon, producing a measurable charge signal.
       </p>
+
+      <p>
+        To suppress thermally generated charge carriers (dark current), the detector is
+        cooled to about 140 K.
+      </p>
+
+      <figure>
+        <img src="/images/DetectionChannels.png" alt="Detection channels" width="400">
+        <figcaption>
+          The three channels are shown. Scintillation results in light being emitted, nuclear
+          recoil resulting in phonons, heating the target, and electro recoil resulting in
+          ionization and charges being created. DANAE uses the ionization channel.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="setup">
+      <h2>The setup</h2>
+
+      <p>
+        The setup consists of a vacuum chamber (see Fig. 4) operated at a pressure of about
+        5×10⁻⁶ mbar. Most electronics are placed outside the chamber to reduce thermal load
+        and electromagnetic interference. The DePFET control and front-end readout
+        electronics, however, are located inside the vacuum to keep cable lengths short and
+        to minimize capacitive pickup and noise.
+      </p>
+
+      <figure>
+        <img src="/images/Setup.jpeg" alt="Vacuum chamber setup" width="400">
+        <figcaption>
+          The vacuum chamber with some of the electronics.
+        </figcaption>
+      </figure>
+
+      <p>
+        The sensor comprises a 64×64 matrix of RNDR-DePFET pixels. Rows are read out
+        sequentially while the pixels within a row are read out in parallel. With 800
+        repetitions per pixel, a full sensor frame is acquired in about 1.2 s (left panel of
+        Fig. 5).
+      </p>
+
+      <p>
+        The sensor thickness is 450 μm, and each pixel has a side length of 50 μm.
+        As shown in the right panel of Fig. 5, two sub-pixels form an elongated, oval-like
+        structure.
+      </p>
+
+      <figure>
+        <img src="/images/NewFrontDetector.jpg" alt="Pixel matrix" height="240">
+        <img src="/images/150xk2image.jpg" alt="RNDR-DePFET pixels" height="240">
+        <figcaption>
+          The pixel-matrix is on the left, on the right are two RNDR-DePFET pixel.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="references">
+      <h2>References</h2>
+      <ol>
+        <li>
+          A. Bähr et al.,
+          <a href="https://doi.org/10.1140/epjc/s10052-017-5474-5">
+            DEPFET detectors for direct detection of MeV Dark Matter particles
+          </a>,
+          Eur. Phys. J. C <strong>77</strong>, 905 (2017).
+        </li>
+      </ol>
     </section>
 
   </main>

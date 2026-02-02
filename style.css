@@ -1,0 +1,927 @@
+@import url('https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:wght@400;600;700&family=Zalando+Sans+SemiExpanded:wght@400;500;600&display=swap');
+
+/* =========================
+   1. Global defaults
+   ========================= */
+
+body {
+  margin: 0;
+  font-family: "Zalando Sans SemiExpanded", system-ui, sans-serif;
+}
+
+/* Headings everywhere */
+h1, h2, h3, h4 {
+  font-family: "Zalando Sans Expanded", sans-serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* =========================
+   Intro title with rule
+   ========================= */
+
+.intro-page .intro-identity h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  font-size: 4rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Horizontal rule */
+.intro-page .intro-identity h1::after {
+  content: "";
+  height: 1px;
+  width: 8ch; /* controls visual weight */
+  background: rgba(239, 237, 227, 0.6);
+}
+
+.intro-page .subtitle {
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #efede3;
+
+  text-align: right;
+}
+
+.intro-page .subtitle span {
+  display: block;
+  white-space: nowrap;
+}
+
+
+.intro-page .subtitle .indent {
+  display: inline-block;
+  padding-left: 2ch;
+}
+
+/* Paragraph defaults */
+p {
+  margin: 0;
+}
+
+/* =========================
+   2. Themes (colors ONLY)
+   ========================= */
+
+body.theme-light {
+  background-color: #efede3;
+  color: #1b1b1b;
+}
+
+body.theme-dark {
+  background-color: #1b1b1b;
+  color: #efede3;
+}
+
+/* =========================
+   3. Standard content pages
+   ========================= */
+
+body.page-body {
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* Centered content wrapper */
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* =========================
+   INTRO PAGE SYSTEM
+   Applies ONLY when <body class="intro-page">
+   ========================= */
+
+/* =========================
+   Scroll container
+   ========================= */
+.intro-page .scroll-section {
+  position: relative;
+  height: 200svh; /* 100svh intro + 100svh summary */
+}
+
+/* =========================
+   Panels (full viewport)
+   ========================= */
+.intro-page .intro,
+.intro-page .summary {
+  height: 100svh;
+  box-sizing: border-box;
+}
+
+.intro-page .intro-spacer {
+  height: 100vh;
+}
+
+/* =========================
+   Intro panel (sticky, hollow)
+   ========================= */
+.intro-page .intro {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 2rem;
+
+  background: none;
+}
+
+/* Intro background */
+.intro-page .intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1b1b1b;
+  z-index: 0;
+}
+
+/* Intro content above background */
+.intro-page .intro > * {
+  position: relative;
+  z-index: 1;
+}
+
+.intro-page .intro-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+
+
+/* =========================
+   Top navigation (intro only)
+   ========================= */
+.intro-page .top-nav {
+  margin-top: 1.5rem;
+}
+
+.intro-page .top-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.intro-page .top-nav a {
+  font-family: "Zalando Sans SemiExpanded", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #efede3;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+}
+
+.intro-page .top-nav a:hover {
+  opacity: 0.6;
+}
+
+/* =========================
+   Intro layout groups
+   ========================= */
+.intro-page .intro-identity {
+  max-width: 70ch;
+  margin: 0 auto 2.5rem auto;
+}
+
+.intro-page .intro-identity {
+  position: relative;
+}
+
+.intro-page .intro-identity::after {
+  content: "";
+  display: block;
+  margin: 2rem auto 0;
+  width: 67ch;
+  height: 1px;
+  background: rgba(239, 237, 227, 0.3);
+}
+
+.intro-page .intro-description {
+  max-width: 60ch;
+  margin: 2.5rem auto 0;
+
+  
+  text-align: justify;
+  hyphens: auto;
+
+}
+
+.intro-page .intro-description p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+
+  color: rgba(239, 237, 227, 0.85);
+}
+
+
+/* =========================
+   Intro typography (intro owns its colors)
+   ========================= */
+.intro-page .intro h1,
+.intro-page .intro h2 {
+  color: #efede3;
+}
+
+.intro-page .intro h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.intro-page .intro h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.intro-page .intro-description p {
+  font-family: "Zalando Sans SemiExpanded", system-ui, sans-serif;
+  color: #efede3;
+  margin: 0;
+}
+
+/* =========================
+   Summary panel (grid layout, vertically centered)
+   ========================= */
+.intro-page .summary {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 280px 2fr;
+  align-content: start;     /* ← THIS is the key line */
+  gap: 3rem;
+
+  min-height: 100svh;        /* full viewport height */
+  padding: 6rem 2rem;        /* more breathing room */
+  background-color: #efede3;
+}
+
+
+/* =========================
+   Summary sidebar (RIGHT rule, in-flow)
+   ========================= */
+
+.intro-page .summary .side-nav {
+  position: relative;              /* anchor for ::after */
+  align-self: start;
+
+  padding-right: 1.5rem;
+}
+
+/* =========================
+   Summary sidebar (RIGHT rule, in-flow)
+   ========================= */
+
+.intro-page .summary .side-nav {
+  position: relative;              /* anchor for ::after */
+  align-self: start;
+
+  padding-right: 1.5rem;
+}
+
+/* vertical rule */
+.intro-page .summary .side-nav::after {
+  content: "";
+  position: absolute;
+
+  top: -3rem;                      /* extend above nav */
+  right: 0;
+
+  width: 1px;
+  height: calc(100vh - 7rem);      /* long editorial line */
+
+  background: rgba(27, 27, 27, 0.12);
+}
+
+/* list reset */
+.intro-page .summary .side-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.intro-page .summary .side-nav li {
+  margin: 0;
+  padding: 0;
+}
+
+.intro-page .summary .side-nav li + li {
+  margin-top: 0.75rem;             /* more breathing room */
+}
+
+/* links */
+.intro-page .summary .side-nav a {
+  display: block;
+
+  padding: 0.45rem 0;
+  padding-right: 0.75rem;
+
+  font-family: "Zalando Sans SemiExpanded", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 450;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(27, 27, 27, 0.7);
+  text-decoration: none;
+
+  border-right: 2px solid transparent;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.intro-page .summary .side-nav a:hover {
+  color: #1b1b1b;
+  border-right-color: #1b1b1b;
+  transform: translateX(2px);
+}
+
+
+/* list reset */
+.intro-page .summary .side-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.intro-page .summary .side-nav li {
+  margin: 0;
+  padding: 0;
+}
+
+.intro-page .summary .side-nav li + li {
+  margin-top: 0.75rem;             /* more breathing room */
+}
+
+/* links */
+.intro-page .summary .side-nav a {
+  display: block;
+
+  padding: 0.45rem 0;
+  padding-right: 0.75rem;
+
+  font-family: "Zalando Sans SemiExpanded", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 450;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(27, 27, 27, 0.7);
+  text-decoration: none;
+
+  border-right: 2px solid transparent;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
+}
+
+.intro-page .summary .side-nav a:hover {
+  color: #1b1b1b;
+  border-right-color: #1b1b1b;
+  transform: translateX(2px);
+}
+
+/* =========================
+   Summary content – two columns (FIXED)
+   ========================= */
+
+.intro-page .summary .summary-content {
+  display: flex;
+  align-items: center;
+  margin-top: 7rem;
+}
+
+.intro-page .summary .summary-content.two-col {
+  grid-column: 2;              /* explicitly sit in content column */
+  width: 100%;                 /* fill available space */
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+}
+
+/* Column text */
+.intro-page .summary .text-col p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
+  color: rgba(27, 27, 27, 0.9);
+}
+
+.intro-page .summary .text-col p + p {
+  margin-top: 1.6rem;
+}
+
+
+
+/* =========================
+   Logo bar (true overlay)
+   ========================= */
+.intro-page .logo-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  padding: 0.75rem 95rem;
+
+  background: transparent;
+  z-index: 1000;
+}
+
+.intro-page .logo-bar img {
+  height: 50px;
+  width: auto;
+}
+
+
+/* =========================
+   Apantias page layout
+   Fixed, centered composition
+   ========================= */
+
+/* Centering container (applies to hero + layout as a unit) */
+.main-content.ap-body {
+  min-height: 100vh;
+  padding-top: 2rem;
+  }
+
+/* =========================
+   BOX 2–3: Title group
+   ========================= */
+
+.ap-hero {
+  padding-top: 6rem;
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+  text-align: left;
+}
+
+.ap-title {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.ap-subtitle {
+  margin-top: 0.5rem;
+  max-width: 50ch;
+  opacity: 0.7;
+}
+
+/* =========================
+   BOX 4–5: Two-column layout
+   ========================= */
+
+.ap-layout {
+  width: 1000px;               /* same width as hero */
+  justify-self: center;       /* center as a group */
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5rem;
+}
+
+/* =========================
+   BOX 4: Repo button column
+   ========================= */
+
+.ap-repo {
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+}
+
+
+/* =========================
+   BOX 5: Text block
+   ========================= */
+
+.ap-textblock {
+  max-width: 65ch;
+  margin-left: 2rem;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.ap-text + .ap-text {
+  margin-top: 1.25rem;
+}
+
+.nav-home {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+
+  padding: 0.6rem 1.2rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Zalando Sans SemiExpanded", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+
+  text-decoration: none;
+  border-radius: 999px;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+
+  z-index: 1000;
+}
+
+/* Dark theme */
+body.theme-dark .nav-home {
+  color: #efede3;
+  border: 1.5px solid #efede3;
+}
+
+body.theme-dark .nav-home:hover {
+  background-color: #efede3;
+  color: #1b1b1b;
+  transform: translateY(-1px);
+}
+
+/* Light theme */
+body.theme-light .nav-home {
+  color: #1b1b1b;
+  border: 1.5px solid #1b1b1b;
+}
+
+body.theme-light .nav-home:hover {
+  background-color: #1b1b1b;
+  color: #efede3;
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   Buttons
+   ========================= */
+
+.button {
+  position: relative;
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.4rem;
+
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+  background: none;
+  color: inherit;
+  text-decoration: none;
+
+  overflow: hidden;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0.1;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+}
+
+.button:hover::after {
+  transform: translateX(0);
+}
+
+
+
+/* Light theme */
+body.theme-light .button {
+  border: 1.5px solid #1b1b1b;
+  color: #1b1b1b;
+}
+
+body.theme-light .button:hover {
+  background-color: #1b1b1b;
+  color: #efede3;
+}
+
+/* Dark theme */
+body.theme-dark .button {
+  border: 1.5px solid #efede3;
+  color: #efede3;
+}
+
+body.theme-dark .button:hover {
+  background-color: #efede3;
+  color: #1b1b1b;
+}
+
+
+/* =========================================================
+   EXPERIMENTAL SETUP PAGE
+   Light-mode, report-style layout
+   Applies when <body class="setup-page">
+   ========================================================= */
+
+
+/* =========================
+   1. Page base (force light mode)
+   ========================= */
+
+.setup-page {
+  background-color: #efede3;
+  color: #1b1b1b;
+}
+
+
+/* =========================
+   2. Main content wrapper
+   ========================= */
+
+.setup-page .main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+
+/* =========================
+   3. Headings & typography
+   ========================= */
+
+.setup-page h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.setup-page h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.setup-page p {
+  max-width: 65ch;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+
+/* =========================
+   4. Table of contents
+   ========================= */
+
+.setup-page .toc {
+  margin: 2rem 0 3rem;
+}
+
+.setup-page .toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.setup-page .toc li + li {
+  margin-top: 0.4rem;
+}
+
+.setup-page .toc a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: rgba(27, 27, 27, 0.7);
+}
+
+.setup-page .toc a:hover {
+  color: #1b1b1b;
+}
+
+
+/* =========================
+   5. Figure panels (alternating layout)
+   ========================= */
+
+.setup-page figure {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  margin: 2.8rem 0;
+  padding: 1.5rem 1.8rem;
+
+  background-color: rgba(27, 27, 27, 0.035);
+  border-radius: 6px;
+}
+
+
+/* Odd figures: image left */
+.setup-page figure:nth-of-type(odd) {
+  flex-direction: row;
+}
+
+/* Even figures: image right */
+.setup-page figure:nth-of-type(even) {
+  flex-direction: row-reverse;
+}
+
+
+/* =========================
+   6. Figure images
+   ========================= */
+
+.setup-page figure img {
+  max-width: 320px;
+  height: auto;
+  display: block;
+}
+
+/* Side-by-side images inside one figure */
+.setup-page figure img + img {
+  margin-left: 1rem;
+}
+
+
+/* =========================
+   7. Figure captions
+   ========================= */
+
+.setup-page figcaption {
+  max-width: 45ch;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(27, 27, 27, 0.75);
+}
+
+
+/* =========================
+   8. Bibliography / references
+   ========================= */
+
+.setup-page .references {
+  margin-top: 4.5rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid rgba(27, 27, 27, 0.25);
+}
+
+.setup-page .references h2 {
+  margin-top: 0;
+}
+
+.setup-page .references li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   PUBLICATIONS PAGE
+   Editorial list, link-forward
+   Applies when <body class="publications-page">
+   ========================================================= */
+
+
+/* =========================
+   Page base
+   ========================= */
+
+.publications-page {
+  background-color: #efede3;
+  color: #1b1b1b;
+}
+
+
+/* =========================
+   Page container
+   ========================= */
+
+.publications-page .main-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+
+/* =========================
+   Headings
+   ========================= */
+
+.publications-page h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 3.5rem;
+}
+
+
+/* =========================
+   Publication list
+   ========================= */
+
+.publications-page .pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+
+/* =========================
+   Single publication entry
+   ========================= */
+
+.publications-page .pub-item {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 2rem;
+}
+
+
+/* =========================
+   Year column
+   ========================= */
+
+.publications-page .pub-year {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: rgba(27, 27, 27, 0.55);
+  padding-top: 0.2rem;
+}
+
+
+/* =========================
+   Publication body
+   ========================= */
+
+.publications-page .pub-body {
+  max-width: 65ch;
+}
+
+
+/* =========================
+   Text styles
+   ========================= */
+
+.publications-page .pub-authors {
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+  color: rgba(27, 27, 27, 0.8);
+}
+
+.publications-page .pub-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.45;
+  margin-bottom: 0.5rem;
+}
+
+
+/* =========================
+   Links (arXiv / DOI / PDF)
+   ========================= */
+
+.publications-page .pub-links {
+  font-size: 0.9rem;
+}
+
+.publications-page .pub-links a {
+  text-decoration: none;
+  color: rgba(27, 27, 27, 0.75);
+  border-bottom: 1px solid rgba(27, 27, 27, 0.25);
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.publications-page .pub-links a:hover {
+  color: #1b1b1b;
+  border-color: #1b1b1b;
+}
+
