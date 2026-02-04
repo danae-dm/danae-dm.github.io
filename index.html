@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DANAE Experiment</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,9 +14,10 @@
     <!-- INTRO / LANDING PANEL -->
     <header class="intro">
 
-      <div class="scroll-indicator" aria-hidden="true">
-        <span class="chevron"></span>
-      </div>
+    <a href="#summary" class="scroll-indicator" aria-label="Scroll to content">
+      <span class="chevron"></span>
+    </a>
+
 
 
       <!-- TOP NAV (intro only) -->
@@ -63,7 +65,8 @@
     <div class="intro-spacer"></div>
 
     <!-- SUMMARY / CONTENT PANEL -->
-    <main class="summary">
+    <main id="summary" class="summary">
+
 
             <nav class="side-nav" aria-label="Main navigation">
         <ul>
@@ -83,7 +86,7 @@
       The goal of the DANAE experiment is the direct detection of dark matter (DM) with particle masses below 1 GeV/c².
       This so-called light dark matter has gained increasing attention in recent years, driven by theoretical model predictions
       as well as by the experimental exclusion of higher-mass regions. The DANAE experiment therefore employs special silicon
-      detectors—DEPFETs (Deep p-channel Field Effect Transistors) with repetitive non-destructive readout (RNDR).
+      detectors — DEPFETs (Deep p-channel Field Effect Transistors) with repetitive non-destructive readout (RNDR).
     </p>
 
     <p>
@@ -129,11 +132,29 @@
 
   </div>
 
-  <!-- LOGO BAR -->
-  <div class="logo-bar">
-    <img src="/images/logo_mbi.png" alt="MBI Logo">
-    <img src="/images/logo_fhwn.png" alt="FHWN Logo">
-  </div>
+<div class="logo-bar">
+  <a href="https://www.oeaw.ac.at/mbi/home"
+     target="_blank"
+     rel="noopener"
+     aria-label="Marietta Blau Institut">
+    <img src="/images/logo_mbi.png" alt="Marietta Blau Institut logo">
+  </a>
+
+  <a href="https://www.fhwn.ac.at"
+     target="_blank"
+     rel="noopener"
+     aria-label="FHWN website">
+    <img src="/images/logo_fhwn.png" alt="FHWN logo">
+  </a>
+
+  <a href="https://www.mpg.de/8735784/hll"
+     target="_blank"
+     rel="noopener"
+     aria-label="HLL website">
+    <img src="/images/logo_hll.png" alt="HLL logo">
+  </a>
+</div>
+
 
   <!-- JS -->
   <script src="script.js"></script>

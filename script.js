@@ -39,3 +39,38 @@ if (menuButton && sideNav) {
   });
 }
 
+window.addEventListener("scroll", () => {
+  document.querySelector(".scroll-indicator")?.style.setProperty(
+    "opacity",
+    Math.max(0, 1 - window.scrollY / 200)
+  );
+});
+
+const lightbox = document.querySelector('.lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const closeBtn = lightbox.querySelector('.lightbox-close');
+
+document.querySelectorAll('.setup-page figure img').forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add('active');
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    lightbox.classList.remove('active');
+  }
+});
+
+

@@ -2,18 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Experimental Setup – DANAE Experiment</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="page-body theme-light">
+<!-- Image lightbox -->
+<div class="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close image">✕</button>
+  <img src="" alt="">
+</div>
 
-    <!-- BOX 1: Back link (top, flush right) -->
+<body class="setup-page page-body theme-light">
+
+  <div class="setup-topbar">
     <a href="index.html" class="nav-home" aria-label="Back to overview">
       ← Back to overview
     </a>
+  </div>
 
-  <main class="main-content setup-page">
+  <main class="main-content">
 
     <header class="page-header">
       <h1>Experimental Setup</h1>
@@ -67,11 +75,11 @@
         with a clear gate (see Fig. 1).
       </p>
 
-      <figure>
+      <figure class="figure-right">
         <img src="/images/RNDR-DEPFET.jpg" alt="RNDR-DEPFET schematic" width="400">
         <figcaption>
           RNDR-DEPFET schematic: Electrons are collected in the internal gate to modify the
-          conductivity of the transistor channel. An RNDR-DEPFET pixel hosts two sub-pixels
+          conductivity of the transistor channel. An RNDR-DePFET pixel hosts two sub-pixels
           to interchange electrons for repetitive readout [1].
         </figcaption>
       </figure>
@@ -90,7 +98,7 @@
         1/√N, which is reflected by the narrowing of the noise peak in Fig. 2.
       </p>
 
-      <figure>
+      <figure class="figure-left">
         <img src="/images/250729_NREP.jpg" alt="Noise vs repetition" width="400">
         <figcaption>
           The spectrum for different numbers of repetition. The width of the peak becomes
@@ -116,7 +124,7 @@
         cooled to about 140 K.
       </p>
 
-      <figure>
+      <figure class="figure-right">
         <img src="/images/DetectionChannels.png" alt="Detection channels" width="400">
         <figcaption>
           The three channels are shown. Scintillation results in light being emitted, nuclear
@@ -137,7 +145,7 @@
         to minimize capacitive pickup and noise.
       </p>
 
-      <figure>
+      <figure class="figure-left">
         <img src="/images/Setup.jpeg" alt="Vacuum chamber setup" width="400">
         <figcaption>
           The vacuum chamber with some of the electronics.
@@ -157,11 +165,13 @@
         structure.
       </p>
 
-      <figure>
-        <img src="/images/NewFrontDetector.jpg" alt="Pixel matrix" height="240">
-        <img src="/images/150xk2image.jpg" alt="RNDR-DePFET pixels" height="240">
+      <figure class="figure-center">
+        <div class="figure-media">
+          <img src="/images/NewFrontDetector.jpg" alt="Pixel matrix" height="240">
+          <img src="/images/150xk2image.jpg" alt="RNDR-DePFET pixels" height="240">
+        </div>
         <figcaption>
-          The pixel-matrix is on the left, on the right are two RNDR-DePFET pixel.
+          The pixel-matrix is shown on the left; two RNDR-DePFET pixels are shown on the right.
         </figcaption>
       </figure>
     </section>
@@ -180,6 +190,8 @@
     </section>
 
   </main>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
