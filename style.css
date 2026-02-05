@@ -950,6 +950,25 @@ body.theme-dark .button:hover {
 }
 
 /* =========================
+   Figure numbering (setup page only)
+   ========================= */
+
+.setup-page {
+  counter-reset: figure;
+}
+
+.setup-page figure {
+  counter-increment: figure;
+}
+
+.setup-page figcaption::before {
+  content: "Figure " counter(figure) ": ";
+  font-weight: 600;
+  color: rgba(27, 27, 27, 0.85);
+}
+
+
+/* =========================
    Explicit figure alignment
    ========================= */
 
