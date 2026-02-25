@@ -1249,3 +1249,27 @@ body.theme-dark .button:hover {
   color: #1b1b1b;
   border-color: #1b1b1b;
 }
+
+/* =========================
+   Data / Supplement Section
+   ========================= */
+
+.publications-page .data-supplement h2 {
+  font-size: clamp(1.6rem, 3.5vw, 1.9rem);
+  margin-top: clamp(1.5rem, 3vw, 2rem);
+}
+
+.publications-page .pub-item:last-child {
+  margin-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.publications-page .data-supplement {
+  margin-top: clamp(2rem, 2vw, 7rem);
+}
+
+.publications-page .data-text {
+  font-size: clamp(0.9rem, 1.2vw, 0.95rem);
+  margin-bottom: 0.8rem;
+  color: rgba(27, 27, 27, 0.8);
+}
+
